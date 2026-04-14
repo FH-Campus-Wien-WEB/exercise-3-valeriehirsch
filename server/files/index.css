@@ -1,77 +1,135 @@
-@import url(base.css);
+body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+            line-height: 1.5;
+        }
 
-h1 {
-  font-size: 200%;
-  margin: 8px 0px;
+        h1 {
+            font-size: 2em;
+            font-weight: bold;
+            display:block;
+            width: 100%;
+            text-align: center;
+            color: #222;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #d6336c;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .movie {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            display: flex;
+            gap: 15px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+            transition: background-color 0.3s ease;
+            position: relative;
+        }
+
+        .movie:hover {
+            background-color: #dddddd;
+        }
+
+        .movie img {
+            width: auto;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .movie-info {
+            flex: 1;
+        }
+
+        .movie-info h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            color: #222;
+        }
+
+        .movie-info p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .movie-info p.genres span {
+            transition: color 0.3s, font-weight 0.3s;
+            cursor: default;
+        }
+
+        .movie-info p.genres span:hover {
+            color: #d6336c;
+            font-weight: bold;
+        }
+
+        .rating {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-right: 5px;
+         }
+
+        .rating.good {
+            background-color: #28a745; 
+        }
+
+        .rating.medium {
+            background-color: #ffc107; 
+            color: #333;
+        }
+
+        .rating.bad {
+            background-color: #dc3545; 
+        }
+
+        /*responsive*/
+        @media (max-width: 600px) {
+            .movie {
+                flex-direction: column; 
+                align-items: center;   
+                text-align: center;
+            }
+
+            .movie img {
+                width: 80%;    
+                max-width: 200px;
+                margin-bottom: 10px;
+            }
+
+            .movie-info {
+                width: 100%;  
+            }
+        }
+
+        .movie-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+     position: absolute;
+    bottom: 15px;
+    right: 15px;
 }
 
-/* Constrain the page to the viewport */
-html, body {
-  height: 100vh;
+.edit-btn {
+    padding: 6px 14px;
+    background-color: #d64149;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: bold;
+    
+    transition: background-color 0.2s ease;
+
 }
 
-/* Center the nav's header and list */
-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* navigation buttons have full width */
-nav button {
-  width: 100%;
-}
-
-/* Remove unnecessary space and bullets from the lists */
-ul {
-  padding: 0px;
-  margin: 16px;
-  list-style-type: none;
-}
-
-/* Task 2.1. Lay out the childs of the 'body' using Grid Template Areas. */
-
-
-/* Task 3.1. Make the header element a flex container and center its children
-   vertically and horizontally.
- */
-
-
-/* Task 3.2. Make the list items of the unordered list in the nav element a flex container, 
-   use column direction and center the child items
- */
-
-/* Task 3.3. Make the main element a Flexbox container */
-
-
-/* Task 3.4. Make the footer's ul a Flexbox container */
-
-
-/* From here on styling from exercise 1 */
-img {
-  border-radius: 12px;
-}
-
-article {
-  background-color: lightgray;
-  border-radius: 16px;
-  padding: 16px;
-  width: 384px;
-  margin: 8px;
-}
-
-a {
-  color: beige;
-}
-
-span {
-  margin-right: 4px;
-}
-
-.genre {
-  padding: 4px 8px;
-  border: solid black 1px;
-  border-radius: 6px;
-  background-color: darkgray;
-  font-weight: bold;
+.edit-btn:hover {
+    background-color: #a9343a;
 }

@@ -1,20 +1,107 @@
 body {
-  font-family: "Trebuchet MS", sans-serif;
-  background-color: brown;
-  color: beige;
-}
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+            line-height: 1.5;
+        }
 
-main {
-  color: #333;
-}
+        h1 {
+            font-size: 2em;
+            font-weight: bold;
+            display:block;
+            width: 100%;
+            text-align: center;
+            color: #222;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #d6336c;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
 
-button {
-    padding: 4px;
-    border-width: 1px;
-    border-radius: 4px;
-    font-size: 105%;
-}
+        .movie {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            display: flex;
+            gap: 15px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+            transition: background-color 0.3s ease;
+        }
 
-button:hover {
-  background-color: darkgray;
-}
+        .movie:hover {
+            background-color: #dddddd;
+        }
+
+        .movie img {
+            width: auto;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .movie-info {
+            flex: 1;
+        }
+
+        .movie-info h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            color: #222;
+        }
+
+        .movie-info p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .movie-info p.genres span {
+            transition: color 0.3s, font-weight 0.3s;
+            cursor: default;
+        }
+
+        .movie-info p.genres span:hover {
+            color: #d6336c;
+            font-weight: bold;
+        }
+
+        .rating {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-right: 5px;
+         }
+
+        .rating.good {
+            background-color: #28a745; 
+        }
+
+        .rating.medium {
+            background-color: #ffc107; 
+            color: #333;
+        }
+
+        .rating.bad {
+            background-color: #dc3545; 
+        }
+
+        /*responsive*/
+        @media (max-width: 600px) {
+            .movie {
+                flex-direction: column; 
+                align-items: center;   
+                text-align: center;
+            }
+
+            .movie img {
+                width: 80%;    
+                max-width: 200px;
+                margin-bottom: 10px;
+            }
+
+            .movie-info {
+                width: 100%;  
+            }
+        }

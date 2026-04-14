@@ -9,3 +9,105 @@ textarea {
 div {
   margin: 4px 0px;
 }
+
+
+form {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 4px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.95em;
+    color: #555;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #d6336c;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.save-btn {
+    background-color: #28a745;
+}
+
+.save-btn:hover {
+    background-color: #1e7e34;
+}
+
+.cancel-btn {
+    background-color: #d64149;
+}
+
+.cancel-btn:hover {
+    background-color: #a9343a;
+}
+
+button {
+    padding: 6px 14px;
+    background-color: #d64149;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #a9343a;
+}
+
+.edit-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.edit-container img {
+    width: 250px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+form {
+    flex: 1;
+}
+
+@media (max-width: 600px) {
+    .edit-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .edit-container img {
+        width: 80%;
+        max-width: 200px;
+    }
+}
