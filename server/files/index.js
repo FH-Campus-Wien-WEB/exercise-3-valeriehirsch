@@ -18,12 +18,25 @@ function formatRuntime(runtime) {
   return hours + "h " + minutes + "m";
 }
 
+function getRatingClass(rating, type) {
+  if (type === 'imdb') {
+    if (rating >= 7) return 'good';
+    if (rating >= 5) return 'medium';
+    return 'bad';
+  } else {
+    if (rating >= 70) return 'good';
+    if (rating >= 50) return 'medium';
+    return 'bad';
+  }
+}
+
 function appendMovie(movie, element) {
   new ElementBuilder("article").id(movie.imdbID)
           .append(new ElementBuilder("img").with("src", movie.Poster))
           .append(new ElementBuilder("h1").text(movie.Title))
           .append(new ElementBuilder("p")
               .append(new ElementBuilder("button").text("Edit")
+                    .with("class", "edit-btn")
                     .listener("click", () => location.href = "edit.html?imdbID=" + movie.imdbID)))
           .append(new ParagraphBuilder().items(
               "Runtime " + formatRuntime(movie.Runtime),
@@ -32,6 +45,14 @@ function appendMovie(movie, element) {
                 new Date(movie.Released).toLocaleDateString("en-US")))
           .append(new ParagraphBuilder().childClass("genre").items(movie.Genres))
           .append(new ElementBuilder("p").text(movie.Plot))
+          .append(new ElementBuilder("p")
+          .append(new ElementBuilder("span")
+              .text("IMDB: " + movie.imdbRating)
+              .with("class", "rating " + getRatingClass(movie.imdbRating, 'imdb')))
+          .append(new ElementBuilder("p"))
+          .append(new ElementBuilder("span")
+              .text("Metascore: " + movie.Metascore)
+              .with("class", "rating " + getRatingClass(movie.Metascore, 'meta'))))
           .append(new ElementBuilder("h2").pluralizedText("Director", movie.Directors))
           .append(new ListBuilder().items(movie.Directors))
           .append(new ElementBuilder("h2").pluralizedText("Writer", movie.Writers))
