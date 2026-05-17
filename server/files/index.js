@@ -116,12 +116,7 @@ window.onload = function () {
       }
 
       /* When a first button exists, we click it to load all movies. */
-      const firstButton = document.querySelector("nav button");
-      if (firstButton) {
-        firstButton.click();
-      }
-    } else {
-      document.querySelector("body").append(`Daten konnten nicht geladen werden, Status ${xhr.status} - ${xhr.statusText}`);
+      allBtn.click();
     }
   };
   xhr.open("GET", "/genres");
